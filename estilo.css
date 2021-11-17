@@ -1,0 +1,124 @@
+/*BLOQUES*/
+body{
+    background-color: rgb(248, 254, 255);
+}
+nav{
+    background-color: rgb(88, 130, 207); 
+}
+a{
+    text-decoration: none!important;
+}
+img{
+    height: 550px;
+    width: 100%;
+}
+#nav-mobile{
+    display: none;
+}
+/*FONTS*/
+.style{
+    font-family: 'style script', 'sans-serif';
+}
+.roboto{
+    font-family: 'roboto condensed', 'sans-serif';
+}
+/*ELEMENTOS*/
+.buttons{
+    background-color: rgb(88, 130, 207);
+    text-align: center;
+    color: white;
+    border-radius: 10%;
+    height: 30px;
+    width: 30%;
+    font-size: initial;
+}
+.header_span{
+    font-family: 'style script', 'sans-serif';
+    font-size: 45px;
+    text-align: center;
+}
+.nav_lista{
+    margin-top: 0px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+.nav_lista_item{
+    list-style: none;
+    font-size: larger;
+    text-decoration: none; 
+    display: inline-block;  
+    font-family: 'roboto condensed', 'sans-serif';
+}
+.div_img{
+    display: flex;
+    justify-content: center;
+}
+.article_div{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+    background-color: #9bb4c8;
+}
+.article_div_img{
+    height: 250px;
+}
+.section-grid{
+    display: grid;
+    grid-template-rows: auto  auto;
+    grid-template-columns: 50% 50%;
+}
+.ul_li{
+    width: 24%;
+    display: inline-block;
+}
+
+.header_footer_color{
+    text-align: center;
+    color: white; 
+    background-image: linear-gradient(rgb(60, 91, 161), rgb(57, 141, 211));
+}
+/*MODIFICADORES*/
+.article-h2{
+    text-align: center;
+}
+.roboto-p{
+    font-size: x-large;
+}
+.img-contacto{
+    width: 90%;
+}
+
+/*Animaciones*/
+button:hover{
+    background-color: rgb(60, 175, 251);
+    color: rgb(58, 56, 56);
+}
+
+
+
+@media (max-width: 576px) {
+    .ul_li {
+        display: block;
+        width: 100%;
+        margin-left: -15px;
+        margin-bottom: 5px;
+    }
+    .nav_lista{
+        display: none;
+    }
+    #header-web{
+        display: none;
+    }
+    .nav-mobile{
+        display: block;
+    }
+    .brand{
+        font-size: xx-large !important;
+    }
+    
+}
+    
+
+
