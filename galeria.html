@@ -186,6 +186,40 @@
                     </li>
                 </ul>
             </article>
+            <!-- POPUP DE DESTINO -->
+           <div class="modal fade" id="GaleryDestiny" tabindex="-1" aria-labelledby="GaleryDestinyLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="GaleryDestinyLabel">Bienvenido al sistema de ayuda para encontrar un destino</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <p>Ingresa un destino del 0 al 12 y nosotros te recomendamos un numero al azar. Despues podes chequearlo en nuestra seccion: ''Galeria'' </p>
+                  <label for="minum">Mi numero</label>
+                  <select id="minum">
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+                  </select>    
+                  <button class="btn btn-primary" onclick="dondeir()">Descubrir</button>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                </div>
+              </div>
+            </div>
+           </div> 
         </section>
     </main>
     <footer class="header_footer_color navbar-expand-lg">
@@ -207,7 +241,11 @@
             <ul>
                 <li><a href="./galeria.html">Galeria</a></li>
                 <li><a href="./contacto.html">Contacto</a></li>
-                <li><button onclick="dondeir()" class="dontknowbtn">No se donde ir</button></li>
+                <li>
+                    <button type="button" class="dontknowbtn" data-bs-toggle="modal" data-bs-target="#GaleryDestiny">
+                        No se donde ir
+                    </button> 
+                </li>
             </ul>
         </div>
         <div>

@@ -1,49 +1,123 @@
+// ¿DONDE IR?
 let destinos = ["Mongolia", "Australia", "Argentina", "Brasil", "Africa", "italia", "Filipinas", "Cordoba, Argentina", "Salta, Argentina", "San juan, Argentina", "Marruecos, Africa", "Jujuy, Argentina"]
-
-
 function dondeir(){
-    alert ("¿No sabes donde ir? Bienvenido al sistema de ayuda para encontrar un destino")
-    let num = prompt("ingresa un destino del 0 al 12 y nosotros te recomendamos un destino al azar. Despues podes chequearlo en nuestra seccion: ''Galeria'' ")
+    let num = document.getElementById("minum").value
     alert("Podria interesarte viajar a....")
     alert ( "¡" + destinos [num] + "!")
 
 }
-
-
+let destiny;
+let tickets; 
+let adults;
+let minors;
+let miviaje;
+let notificacionindex = document.getElementById("Notificationindex")
+let notificacionnacional= document.getElementById("Notificationnacional")
+let notificacioninter= document.getElementById("Notificationinter")
+// RESERVAR
 function reservar(){
-    alert("Bienvenido al sistema de reservas online de Myjourney.com")
-    let destiny = prompt("Especifique su destino de preferencia")
-    let tickets =  parseInt( prompt("Cantidad de pasajes deseados:") ) 
-    let adults = parseInt (prompt("Cantidad de pasajeros adultos:"))
-    let minors = parseInt (prompt ("Cantidad de pasajeros menores de edad:"))
-
+    class reserva{
+        constructor( destino, pasajes, adultos, menores){
+            this.destino= destino
+            this.pasajes = pasajes
+            this.adultos = adultos
+            this. menores = menores
+        }
+        
+        reservad(){
+            Notificationindex.innerHTML = "Se han reservado " + this.pasajes + " pasaje/s con destino a " + this.destino + ", " + this.adultos + " adultos y " + this.menores + " menores. ¡Disfrute su viaje!"
+        }
+    }
+    let destiny = document.getElementById("recipient-destiny").value
+    let tickets = document.getElementById("recipient-pasangers").value
+    let adults = document.getElementById("recipient-adults").value
+    let minors = document.getElementById("recipient-children").value
     let miviaje= new reserva (destiny, tickets, adults, minors);
     miviaje.reservad();
 }
-
-class reserva{
-    constructor( destino, pasajes, adultos, menores){
-        this.destino= destino
-        this.pasajes = pasajes
-        this.adultos = adultos
-        this. menores = menores
+function reservarnacional(){
+    class reservanacional{
+        constructor( destino, pasajes, adultos, menores){
+            this.destino= destino
+            this.pasajes = pasajes
+            this.adultos = adultos
+            this. menores = menores
+        }
+        
+        reservadnacional(){
+            Notificationnacional.innerHTML = "Se han reservado " + this.pasajes + " pasaje/s con destino a " + this.destino + ", " + this.adultos + " adultos y " + this.menores + " menores. ¡Disfrute su viaje!"
+        }
+    }
+    let destiny = document.getElementById("recipient-nacional-destiny").value
+    let tickets = document.getElementById("recipient-nacional-pasangers").value
+    let adults = document.getElementById("recipient-nacional-adults").value
+    let minors = document.getElementById("recipient-nacional-children").value
+    let miviaje= new reservanacional (destiny, tickets, adults, minors);
+    miviaje.reservadnacional();
+    
+}
+function reservarinter(){
+    class reservainter{
+        constructor( destino, pasajes, adultos, menores){
+            this.destino= destino
+            this.pasajes = pasajes
+            this.adultos = adultos
+            this. menores = menores
+        }
+        
+        reservadinter(){
+            notificacioninter.innerHTML = "Se han reservado " + this.pasajes + " pasaje/s con destino a " + this.destino + ", " + this.adultos + " adultos y " + this.menores + " menores. ¡Disfrute su viaje!"
+        }
     }
     
-    reservad(){
-        alert ("Se han reservado " + this.pasajes + " pasaje/s con destino a " + this.destino + ", " + this.adultos + " adultos y " + this.menores + " menores. ¡Disfrute su viaje!" )
-    }
+    let destiny = document.getElementById("recipient-International-pasangers").value
+    let tickets = document.getElementById("recipient-International-pasangers").value
+    let adults = document.getElementById("recipient-International-adults").value
+    let minors = document.getElementById("recipient-International-children").value
+    let miviaje= new reservainter (destiny, tickets, adults, minors);
+    miviaje.reservadinter();                 
 }
 
-let comentarios = document.getElementById("seccioncomentarios")
 
+
+
+
+// COMENTAR
+let comentarios = document.getElementById("seccioncomentarios")
 function comentar(){
-    let Nombre = prompt("Escriba su nombre completo")
-    let comentario = prompt("Cuentenos su experiencia con la empresa")
-    
+    let Nombre = document.getElementById("recipient-name").value
+    let comentario = document.getElementById("message-text").value
     let parrafo = document.createElement("p")
     parrafo.innerHTML = Nombre + " dice: " + comentario ;
-
     document.body.appendChild(parrafo);
+}
 
+
+// EMPEZAR VIAJE
+
+let divmiviaje = document.getElementById("miviajenacional")
+
+
+
+function empezarviaje(){
+    let partidanacional = document.getElementById("Fida").value;
+    let regresonacional = document.getElementById("Fre").value;
+    let numpasajeros = document.getElementById("npasa").value;
+    Crear()
+}
+
+
+
+function Crear(){
+    let inputpartida = document.createElement("input").setAttribute("id", "partida").setAttribute("value", partidanacional)
+    let inputregreso = document.createElement("input").setAttribute("id", "regreso").setAttribute("value", regresonacional)
+    let inputpasajeros = document.createElement("input").setAttribute("id", "pasajeros").setAttribute("value", numpasajeros)
+    document.divmiviaje.appendChild(inputpartida)
+    document.divmiviaje.appendChild(inputregreso)
 
 }
+
+// function calcular(){
+//     document.getElementById("partidanacional").value = document.getElementById("fida").value 
+//     document.getElementById("regresonacional").value = document.getElementById("fre").value 
+// }

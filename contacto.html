@@ -115,10 +115,72 @@
            <article>
                <h2>¿Ya tuviste la oportunidad de viajar con nosotros?</h2>
                <h3>¡Contanos tu experiencia!</h3>
-               <input type="button" id="comentario" style="margin-left: 48%;" value="Comentar" onclick="comentar()">
+               <button type="button" class="btn btn-primary" id="comentario" style="margin-left: 35%;" data-bs-toggle="modal" data-bs-target="#CommentModal">Comentar</button>
                <h3>Comentarios Personales:</h3>
                <div id="seccioncomentarios"></div>
            </article>
+           
+           <!-- POPUP DE COMENTARIO -->
+           <div class="modal fade" id="CommentModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">New message</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <form>
+                    <div class="mb-3">
+                      <label for="recipient-name" class="col-form-label">Usuario:</label>
+                      <input type="text" class="form-control" id="recipient-name">
+                    </div>
+                    <div class="mb-3">
+                      <label for="message-text" class="col-form-label">Opinion:</label>
+                      <textarea class="form-control" id="message-text"></textarea>
+                    </div>
+                  </form>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                  <button type="button" class="btn btn-primary" data-bs-dismiss="modal" onclick="comentar()">Send message</button>
+                </div>
+              </div>
+            </div>
+          </div>
+           <!-- POPUP DE DESTINO -->
+           <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Bienvenido al sistema de ayuda para encontrar un destino</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <p>Ingresa un destino del 0 al 12 y nosotros te recomendamos un numero al azar. Despues podes chequearlo en nuestra seccion: ''Galeria'' </p>
+                  <label for="minum">Mi numero</label>
+                  <select id="minum">
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+                  </select>    
+                  <button class="btn btn-primary" onclick="dondeir()">Descubrir</button>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                </div>
+              </div>
+            </div>
+           </div> 
        </section>
     </main>
     <footer class="header_footer_color navbar-expand-lg">
@@ -140,7 +202,11 @@
             <ul>
                 <li><a href="./galeria.html">Galeria</a></li>
                 <li><a href="./contacto.html">Contacto</a></li>
-                <li><button onclick="dondeir()" class="dontknowbtn">No se donde ir</button></li>
+                <li>
+                    <button type="button" class="dontknowbtn" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        No se donde ir
+                    </button> 
+                </li>
             </ul>
         </div>
         <div>

@@ -91,32 +91,132 @@
                         <div>
                             <img src="./Imagenes/buenos-aires.jpg" alt="Buenos aires">
                             <h3 class="roboto-p">Buenos aires</h3>
-                            <button class="btn btn-primary btnreserva" onclick="reservar()">Reservar</button> 
+                            <button class="btn btn-primary btnreserva" data-bs-toggle="modal" data-bs-target="#ReservationModal">Reservar</button> 
                         </div>
                     </li>
                     <li>
                         <div>
                             <img src="./Imagenes/bariloche.jpg" alt="Bariloche">
                             <h3 class="roboto-p">Bariloche</h3>
-                            <button class="btn btn-primary btnreserva" onclick="reservar()">Reservar</button>
+                            <button class="btn btn-primary btnreserva" data-bs-toggle="modal" data-bs-target="#ReservationModal">Reservar</button>
                         </div>
                     </li>
                     <li>
                         <div>
                             <img src="./Imagenes/ushuaia.jpg" alt="Ushuaia">
                             <h3 class="roboto-p">Ushuaia</h3>
-                            <button class="btn btn-primary btnreserva" onclick="reservar()">Reservar</button>
+                            <button class="btn btn-primary btnreserva" data-bs-toggle="modal" data-bs-target="#ReservationModal">Reservar</button>
                         </div>
                     </li>
                     <li>
                         <div>
                             <img src="./Imagenes/rio-de-janeiro.jpg" alt="Rio de Janeiro">
                             <h3 class="roboto-p">Rio de Janeiro</h3>
-                            <button class="btn btn-primary btnreserva" onclick="reservar()">Reservar</button>
+                            <button class="btn btn-primary btnreserva" data-bs-toggle="modal" data-bs-target="#ReservationModal" >Reservar</button>
                         </div>
                     </li>
                 </ul>
             </article>
+            <!-- POPUP RESERVA -->
+            <div class="modal fade" id="ReservationModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLabel">Bienvenido al sistema de Reservas de Myjourney.com</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                      <form>
+                        <div class="mb-3">
+                          <label for="recipient-name" class="col-form-label">Destino:</label>
+                          <input type="text" class="form-control" id="recipient-destiny">
+                        </div>
+                        <div class="mb-3">
+                            <label for="recipient-pasangers" class="col-form-label">Pasajeros:</label>
+                            <select class="form-control" id="recipient-pasangers">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="recipient-adults" class="col-form-label">Adultos:</label>
+                            <select class="form-control" id="recipient-adults">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="recipient-children" class="col-form-label">Niños:</label>
+                            <select class="form-control" id="recipient-children">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                            </select>
+                        </div>
+                      </form>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                      <button type="button" class="btn btn-primary" onclick="reservar()">Reservar</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- POPUP DE DESTINO -->
+           <div class="modal fade" id="IndexDestiny" tabindex="-1" aria-labelledby="IndexDestinyLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="IndexDestinyLabel">Bienvenido al sistema de ayuda para encontrar un destino</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <p>Ingresa un destino del 0 al 12 y nosotros te recomendamos un numero al azar. Despues podes chequearlo en nuestra seccion: ''Galeria'' </p>
+                  <label for="minum">Mi numero</label>
+                  <select id="minum">
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+                  </select>    
+                  <button class="btn btn-primary" onclick="dondeir()">Descubrir</button>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                </div>
+              </div>
+            </div>
+           </div>
+           <div class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+                <div class="toast-header">
+                    <strong class="me-auto">Bootstrap</strong>
+                    <small>11 mins ago</small>
+                    <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+                </div>
+                <div class="toast-body">
+                    <p id="Notificationindex"></p>
+                </div>
+            </div>
         </section>
     </main>
     <footer class="header_footer_color navbar-expand-lg">
@@ -138,7 +238,11 @@
             <ul>
                 <li><a href="./galeria.html">Galeria</a></li>
                 <li><a href="./contacto.html">Contacto</a></li>
-                <li><button onclick="dondeir()" class="dontknowbtn">No se donde ir</button></li>
+                <li>
+                  <button type="button" class="dontknowbtn" data-bs-toggle="modal" data-bs-target="#IndexDestiny">
+                    No se donde ir
+                </button> 
+                </li>
             </ul>
         </div>
         <div>

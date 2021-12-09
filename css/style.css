@@ -121,6 +121,9 @@ button:hover {
   border-style: none;
   color: whitesmoke; }
 
+.toast{
+  display: block !important;
+}
 @media (max-width: 576px) {
   main ul {
     padding-left: 2px; }
