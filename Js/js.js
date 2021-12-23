@@ -1,11 +1,13 @@
-// ¿DONDE IR?
 let destinos = ["Mongolia", "Australia", "Argentina", "Brasil", "Africa", "italia", "Filipinas", "Cordoba, Argentina", "Salta, Argentina", "San juan, Argentina", "Marruecos, Africa", "Jujuy, Argentina"]
+
+$(".dontknowbtn").on("click", dondeir());
+
 function dondeir(){
-    let num = document.getElementById("minum").value
+    let num = $("#minum").val() 
     alert("Podria interesarte viajar a....")
     alert ( "¡" + destinos [num] + "!")
-
 }
+
 let destiny;
 let tickets; 
 let adults;
