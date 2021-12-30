@@ -8,6 +8,9 @@ body {
     font-family: "style script", "sans-serif";
     font-size: 45px;
     text-align: center; }
+  body h2, body h3 {
+      text-align: center;
+      font-family: "roboto condensed", "sans-serif"; }  
   body a {
     text-decoration: none !important; }
   body img {
@@ -119,10 +122,7 @@ button:hover {
 .dontknowbtn {
   background-color: transparent;
   border-style: none;
-  color: whitesmoke; }
-
-.toast{
-  display: block !important;
+  color: whitesmoke; 
 }
 @media (max-width: 576px) {
   main ul {

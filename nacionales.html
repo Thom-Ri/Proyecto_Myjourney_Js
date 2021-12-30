@@ -14,6 +14,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&family=Style+Script&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 </head>
 <body class="container-fluid">
     <nav class="nav-mobile" class="navbar navbar-expand-lg navbar-dark header_footer_color">
@@ -372,7 +373,7 @@
                         <option value="11">11</option>
                         <option value="12">12</option>
                     </select>    
-                    <button class="btn btn-primary" onclick="dondeir()">Descubrir</button>
+                    <button class="btn btn-primary discoverbtn">Descubrir</button>
                     </div>
                     <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
@@ -380,16 +381,18 @@
                 </div>
                 </div>
             </div>
-            <div class="toast" role="alert" aria-live="assertive" aria-atomic="true">
-                <div class="toast-header">
-                    <strong class="me-auto">Bootstrap</strong>
-                    <small>11 mins ago</small>
-                    <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+            <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
+                <div id="notificacionnacional" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+                  <div class="toast-header">
+                      <strong class="me-auto">My journey</strong>
+                      <small>Hace un momento</small>
+                      <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close" onclick="cerrarnacional()"></button>
+                  </div>
+                  <div class="toast-body">
+                    <p id="NotificationNacionalTexto"></p>
+                  </div>
                 </div>
-                <div class="toast-body">
-                    <p id="Notificationnacional"></p>
-                </div>
-            </div> 
+            </div>
         </section>
     </main>
     <footer class="header_footer_color navbar-expand-lg">
@@ -431,6 +434,5 @@
         AOS.init();
     </script>
     <script src="./Js/js.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 </body>
 </html>

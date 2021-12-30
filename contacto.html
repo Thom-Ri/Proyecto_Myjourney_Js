@@ -14,6 +14,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&family=Style+Script&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> 
 </head>
 <body class="container-fluid">
     <nav class="nav-mobile" class="navbar navbar-expand-lg navbar-dark header_footer_color">
@@ -70,8 +71,8 @@
             </div>
         </section>
         <section class="section-grid">
-            <div class="historia">
                 <article>
+                  <div class="historia">
                     <h2>25 años siendo tu mejor compañero de viajes</h2>
                     <p class="roboto-p">
                         Desde su fundacion en 1995 por Cerapio Argelli, <span>Myjourney</span> ha crecido hasta convertirse en una empresa de renombre en el turismo argentino.
@@ -80,8 +81,8 @@
                         Somos una compañia compuesta de profesionales del turismo comprometidos a hacer el viaje de tus sueños realidad.
                     </p>    
                     <p class="roboto-p">Estamos listos para brindarte el mejor acompañamiento en tus aventuras por Argentina y el mundo.</p>            
+                  </div>
                 </article>
-            </div>
            <article>
                <h2>Contactanos y comenza tu aventura</h2>
                <div class="container-fluid contactform">
@@ -89,7 +90,7 @@
                    <form>
                     <div class="mb-3">
                         <label for="unom" class="form-label">Nombre completo</label>
-                        <input type="password" class="form-control" id="unom">
+                        <input type="text" class="form-control" id="unom">
                     </div>
                     <div class="mb-3">
                         <label  for="unum" class="form-label">Telefono</label>
@@ -108,18 +109,30 @@
                         <label  for="ucon" class="form-label">Consulta</label>
                         <textarea id="ucon" cols="30" rows="10"></textarea>
                     </div>
-                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <button class="btn btn-primary" id="Postbtn">Enviar</button>
                   </form>
                 </div>
-           </article>
-           <article>
-               <h2>¿Ya tuviste la oportunidad de viajar con nosotros?</h2>
-               <h3>¡Contanos tu experiencia!</h3>
-               <button type="button" class="btn btn-primary" id="comentario" style="margin-left: 35%;" data-bs-toggle="modal" data-bs-target="#CommentModal">Comentar</button>
-               <h3>Comentarios Personales:</h3>
-               <div id="seccioncomentarios"></div>
-           </article>
-           
+            </article>
+            <h2>¿Ya tuviste la oportunidad de viajar con nosotros?</h2>
+            <h3>¡Contanos tu experiencia!</h3>
+            <button type="button" class="btn btn-primary" id="comentario" style="margin-left: 47%;" data-bs-toggle="modal" data-bs-target="#CommentModal">Comentar</button>
+            <h3>Comentarios Personales:</h3>
+            <div id="seccioncomentarios"></div>
+        </section>
+        <section>
+           <!-- POPUP REQUEST -->
+           <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
+              <div id="contacttoast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+                <div class="toast-header">
+                  <strong class="me-auto">My Journey</strong>
+                  <small>Hace un momento</small>
+                  <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+                </div>
+                <div class="toast-body">
+                  <p id="NotificationContacto"></p>
+                </div>
+              </div>
+           </div>
            <!-- POPUP DE COMENTARIO -->
            <div class="modal fade" id="CommentModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">
@@ -142,7 +155,7 @@
                 </div>
                 <div class="modal-footer">
                   <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                  <button type="button" class="btn btn-primary" data-bs-dismiss="modal" onclick="comentar()">Send message</button>
+                  <button type="button" id="btnsendmsg" class="btn btn-primary" data-bs-dismiss="modal">Send message</button>
                 </div>
               </div>
             </div>
@@ -173,7 +186,7 @@
                     <option value="11">11</option>
                     <option value="12">12</option>
                   </select>    
-                  <button class="btn btn-primary" onclick="dondeir()">Descubrir</button>
+                  <button class="btn btn-primary discoverbtn">Descubrir</button>
                 </div>
                 <div class="modal-footer">
                   <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
@@ -222,6 +235,5 @@
         AOS.init();
     </script>
     <script src="./Js/js.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 </body>
 </html>
