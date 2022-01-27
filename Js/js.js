@@ -113,8 +113,8 @@ let comentarios = document.getElementById("seccioncomentarios")
 $("#btnsendmsg").click(function(){
     let Nombre = $("#recipient-name").val()
     let comentario = $("#message-text").val()
-    $("#seccioncomentarios").html(`
-                                    <div class="card">
+    $("#seccioncomentarios").append(`
+                                    <div class="card commentcard">
                                         <div class="card-header">`+ Nombre + `</div>
                                         <div class="card-body">
                                             <p class="card-text">`+ comentario +`</p>

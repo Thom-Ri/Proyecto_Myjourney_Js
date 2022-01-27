@@ -99,6 +99,10 @@ article button {
   display: flex;
   justify-content: center; }
 
+.commentcard {
+  margin-top: 15px;
+  margin-bottom: 15px; } 
+  
 .carousel_img {
   width: 100%; }
 
