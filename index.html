@@ -85,6 +85,28 @@
             </div>
         </div>
         <section>
+            <div class="PlanningDivs" id="PlanningDivNacional">
+              <div class="PlanningInputs">
+                  <label style="margin-top: -3%;" for="planningD">Destino:</label>
+                  <input id="planningD" class="PlanningInput" type="text">
+                  <label for="planningP">Fecha de Partida</label>
+                  <input id="planningP" class="PlanningInput" type="date">
+                  <label for="planningR">Fecha de Regreso</label>
+                  <input id="planningR" class="PlanningInput" type="date">
+                  <label for="planningPA">Numero de Pasajeros</label>
+                  <input id="planningPA"class="PlanningInput" type="date">
+                  <label for="planningE">E-mail</label>
+                  <input id="planningE" class="PlanningInput" type="email">
+              </div> 
+              <div class="PlanningMedia" >
+                  <h2> Tu aventura esta por comenzar</h2>
+                  <div class="PlanningImgDiv">
+                      <img class="planningImg" src="./Imagenes/Aeropuerto.jpg" alt="Tu viaje está por comenzar">
+                  </div>
+                  <br>
+                  <button style="margin-left: 45%; margin-top: 2%;" id="PlanningBtn" onclick="SentPlan()"> Enviar</button>
+              </div>            
+            </div>
             <article>
                 <h2> ¿Dónde viajar...?</h2>
                 <ul>
@@ -92,89 +114,33 @@
                         <div>
                             <img src="./Imagenes/buenos-aires.jpg" alt="Buenos aires">
                             <h3 class="roboto-p">Buenos aires</h3>
-                            <button class="btn btn-primary btnreserva" data-bs-toggle="modal" data-bs-target="#ReservationModal">Reservar</button> 
+                            <button class="btn btn-primary btnConocerMas" data-bs-toggle="modal" data-bs-target="#ReservationModal">Conocer +</button> 
                         </div>
                     </li>
                     <li>
                         <div>
                             <img src="./Imagenes/bariloche.jpg" alt="Bariloche">
                             <h3 class="roboto-p">Bariloche</h3>
-                            <button class="btn btn-primary btnreserva" data-bs-toggle="modal" data-bs-target="#ReservationModal">Reservar</button>
+                            <button class="btn btn-primary btnConocerMas" data-bs-toggle="modal" data-bs-target="#ReservationModal">Conocer +</button>
                         </div>
                     </li>
                     <li>
                         <div>
                             <img src="./Imagenes/ushuaia.jpg" alt="Ushuaia">
                             <h3 class="roboto-p">Ushuaia</h3>
-                            <button class="btn btn-primary btnreserva" data-bs-toggle="modal" data-bs-target="#ReservationModal">Reservar</button>
+                            <button class="btn btn-primary btnConocerMas" data-bs-toggle="modal" data-bs-target="#ReservationModal">Conocer +</button>
                         </div>
                     </li>
                     <li>
                         <div>
                             <img src="./Imagenes/rio-de-janeiro.jpg" alt="Rio de Janeiro">
                             <h3 class="roboto-p">Rio de Janeiro</h3>
-                            <button class="btn btn-primary btnreserva" data-bs-toggle="modal" data-bs-target="#ReservationModal" >Reservar</button>
+                            <button class="btn btn-primary btnConocerMas" data-bs-toggle="modal" data-bs-target="#ReservationModal" >Conocer +</button>
                         </div>
                     </li>
                 </ul>
             </article>
-            <!-- POPUP RESERVA -->
-            <div class="modal fade" id="ReservationModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <h5 class="modal-title" id="exampleModalLabel">Bienvenido al sistema de Reservas de Myjourney.com</h5>
-                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                      <form>
-                        <div class="mb-3">
-                          <label for="recipient-name" class="col-form-label">Destino:</label>
-                          <input type="text" class="form-control" id="recipient-destiny">
-                        </div>
-                        <div class="mb-3">
-                            <label for="recipient-pasangers" class="col-form-label">Pasajeros:</label>
-                            <select class="form-control" id="recipient-pasangers">
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5">5</option>
-                                <option value="6">6</option>
-                            </select>
-                        </div>
-                        <div class="mb-3">
-                            <label for="recipient-adults" class="col-form-label">Adultos:</label>
-                            <select class="form-control" id="recipient-adults">
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5">5</option>
-                                <option value="6">6</option>
-                            </select>
-                        </div>
-                        <div class="mb-3">
-                            <label for="recipient-children" class="col-form-label">Niños:</label>
-                            <select class="form-control" id="recipient-children">
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5">5</option>
-                                <option value="6">6</option>
-                            </select>
-                        </div>
-                      </form>
-                    </div>
-                    <div class="modal-footer">
-                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                      <button type="button" class="btn btn-primary" onclick="reservar()">Reservar</button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <!-- POPUP DE DESTINO -->
+            <!-- POPUP DE DESTINO -->
            <div class="modal fade" id="IndexDestiny" tabindex="-1" aria-labelledby="IndexDestinyLabel" aria-hidden="true">
             <div class="modal-dialog">
               <div class="modal-content">

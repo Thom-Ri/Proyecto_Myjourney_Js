@@ -6,36 +6,30 @@ $(".discoverbtn").on("click", function(){
     alert ( "¡" + destinos [num] + "!")
 });
 
+//PLANNING//
+let textoindex = document.getElementById("NotificacionIndexTexto")
+
+$(".btnConocerMas").on("click", function(){
+    $("#PlanningDivNacional").css("display", "flex")
+})
+function SentPlan(){
+    textoindex.innerHTML = "¡Muchas gracias por su consulta! Se enviará toda la informacion disponible al mail proporcionado."
+    document.getElementById("notificacionindex").style.display = "block"
+}
+
+
+
+
 let destiny;
 let tickets; 
 let adults;
 let minors;
 let miviaje;
-let textoindex = document.getElementById("NotificacionIndexTexto")
+
 let textonacional= document.getElementById("NotificationNacionalTexto")
 let textointer= document.getElementById("Notificationinter")
 // RESERVAR
-function reservar(){
-    class reserva{
-        constructor( destino, pasajes, adultos, menores){
-            this.destino= destino
-            this.pasajes = pasajes
-            this.adultos = adultos
-            this. menores = menores
-        }
-        
-        reservad(){
-            textoindex.innerHTML = "Se han reservado " + this.pasajes + " pasaje/s con destino a " + this.destino + ": " + this.adultos + " adulto/s y " + this.menores + " menor/es. ¡Disfrute su viaje!";
-            document.getElementById("notificacionindex").style.display = "block";            
-        }
-    }
-    let destiny = document.getElementById("recipient-destiny").value
-    let tickets = document.getElementById("recipient-pasangers").value
-    let adults = document.getElementById("recipient-adults").value
-    let minors = document.getElementById("recipient-children").value
-    let miviaje= new reserva (destiny, tickets, adults, minors);
-    miviaje.reservad();
-}
+
 function reservarnacional(){
     class reservanacional{
         constructor( destino, pasajes, adultos, menores){
@@ -89,6 +83,8 @@ function cerrarinter(){
 function cerrarnacional(){
     document.getElementById("notificacionnacional").style.display = "none";
 }
+
+
 // Enviar formulario
 let urlpost = "https://jsonplaceholder.typicode.com/posts"
 let ContactRequest = {
