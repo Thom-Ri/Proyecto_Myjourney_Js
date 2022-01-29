@@ -32,7 +32,7 @@ $("#discoverbtncontact").on("click", function(){
 let textoindex = document.getElementById("NotificacionIndexTexto")
 
 $(".btnConocerMas").on("click", function(){
-    $("#PlanningDivNacional").css("display", "flex")
+    $("#PlanningDiv").css("display", "flex")
 })
 function SentPlan(){
     textoindex.innerHTML = "¡Muchas gracias por su consulta! Se enviará toda la informacion disponible al mail proporcionado."
