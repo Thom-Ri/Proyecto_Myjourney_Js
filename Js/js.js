@@ -1,7 +1,29 @@
 let destinos = ["Mongolia", "Australia", "Argentina", "Brasil", "Africa", "italia", "Filipinas", "Cordoba, Argentina", "Salta, Argentina", "San juan, Argentina", "Marruecos, Africa", "Jujuy, Argentina"]
 
-$(".discoverbtn").on("click", function(){
-    let num = $("#minum").val() 
+
+$("#discoverbtn").on("click", function(){
+    let num = $("#minumuno").val() 
+    alert("Podria interesarte viajar a....")
+    alert ( "¡" + destinos [num] + "!")    
+});
+$("#discoverbtnational").on("click", function(){
+    let num = $("#minumdos").val() 
+    alert("Podria interesarte viajar a....")
+    alert ( "¡" + destinos [num] + "!")
+});
+$("#discoverbtninternational").on("click", function(){
+    let num = $("#minumtres").val() 
+    alert("Podria interesarte viajar a....")
+    alert ( "¡" + destinos [num] + "!")
+});
+
+$("#discoverbtngalery").on("click", function(){
+    let num = $("#minumcuatro").val() 
+    alert("Podria interesarte viajar a....")
+    alert ( "¡" + destinos [num] + "!")
+});
+$("#discoverbtncontact").on("click", function(){
+    let num = $("#minumcinco").val() 
     alert("Podria interesarte viajar a....")
     alert ( "¡" + destinos [num] + "!")
 });
@@ -76,6 +98,8 @@ function reservarinter(){
 }
 function cerrar(){
     document.getElementById("notificacionindex").style.display = "none"; 
+    document.getElementById("notificacioninter").style.display = "none";
+    document.getElementById("notificacionnacional").style.display = "none";
 }
 function cerrarinter(){
     document.getElementById("notificacioninter").style.display = "none";
